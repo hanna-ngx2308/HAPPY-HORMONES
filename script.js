@@ -101,3 +101,50 @@ window.addEventListener('click', function(event) {
         modal.style.display = "none";
     }
 });
+
+// ========================================================================
+// FILTER FUNCTIONALITY - Lọc elements theo hormone type
+// ========================================================================
+const hormoneLegendItems = document.querySelectorAll('.hormone-legend div');
+let activeFilter = null;
+
+// Xử lý click event cho mỗi hormone legend item
+hormoneLegendItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Lấy hormone type từ class (dopamine, oxytocin, serotonin, endorphins)
+        const hormoneType = this.classList[0]; // Lấy class đầu tiên (dopamine, oxytocin, etc.)
+        
+        // Nếu click vào item đang active, hiển thị tất cả
+        if (activeFilter === hormoneType) {
+            // Hiển thị tất cả elements
+            elements.forEach(element => {
+                element.classList.remove('hidden');
+            });
+            
+            // Xóa active state
+            hormoneLegendItems.forEach(btn => btn.classList.remove('active'));
+            activeFilter = null;
+        } else {
+            // Ẩn tất cả elements trước
+            elements.forEach(element => {
+                element.classList.add('hidden');
+            });
+            
+            // Hiển thị chỉ elements thuộc hormone type được chọn
+            elements.forEach(element => {
+                if (element.classList.contains(hormoneType)) {
+                    element.classList.remove('hidden');
+                }
+            });
+            
+            // Cập nhật active state
+            hormoneLegendItems.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            activeFilter = hormoneType;
+        }
+    });
+    
+    // Thêm cursor pointer và hover effect
+    item.style.cursor = 'pointer';
+    item.style.transition = 'all 0.3s ease';
+});

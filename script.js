@@ -57,6 +57,18 @@ const modalHormoneType = document.getElementById("modal-hormone-type");
 const modalDetails = document.getElementById("modal-details");
 const modalImpactLevel = document.getElementById("modal-impact-level");
 
+// Thiết lập grid positioning từ data attributes
+elements.forEach(element => {
+    const rowStart = element.getAttribute('data-row-start');
+    const rowSpan = element.getAttribute('data-row-span');
+    const colStart = element.getAttribute('data-col-start');
+    
+    if (rowStart && rowSpan && colStart) {
+        element.style.gridRow = `${rowStart} / span ${rowSpan}`;
+        element.style.gridColumn = colStart;
+    }
+});
+
 // Hàm hiển thị Modal
 function showModal(elementName, details) {
     modalTitle.textContent = elementName;

@@ -1,168 +1,255 @@
 /* ======================================================================== */
-/* CSS CHUNG */
+/* 1. CSS CHUNG VÀ FONT INTER                                */
 /* ======================================================================== */
 body {
-    /* ĐÃ SỬA FONT THÀNH INTER */
-    font-family: 'Inter', sans-serif; 
-    
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #fff; /* Nền trắng như thiết kế */
+    padding: 30px 20px;
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-weight: 800;
 }
 
-/* Container chứa Cột Impact Level và Lưới Chính */
+/* Container chính của bảng */
 .table-container {
     display: flex;
     max-width: 1200px;
     width: 100%;
+    margin-top: 50px;
 }
 
-/* Thiết lập Cột Impact Level (Tác động) */
+/* ======================================================================== */
+/* 2. CỘT IMPACT LEVEL & CHÚ THÍCH PHỤ                               */
+/* ======================================================================== */
 .impact-levels {
-    display: flex;
-    flex-direction: column;
     width: 100px;
-    margin-right: 10px;
+    margin-right: 20px;
     text-align: right;
-    font-weight: bold;
+    font-weight: 800;
+    position: relative;
 }
 
 .level-label {
-    height: 50px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    height: 30px;
     font-size: 0.9em;
     padding-bottom: 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 .level-number {
-    height: 100px;
-    line-height: 100px;
-    font-size: 1.2em;
-    color: #555;
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+    color: #000;
 }
 
+/* Định vị tuyệt đối các số level để căn với các ô */
+.level-5 { top: 50px; } 
+.level-4 { top: 250px; }
+.level-3 { top: 460px; }
+.level-2 { top: 670px; }
+.level-1 { top: 880px; }
+
+
 /* ======================================================================== */
-/* CSS GRID BẢNG & MÀU SẮC                            */
+/* 3. CSS GRID BẢNG & ĐỊNH VỊ ELEMENT (Quan trọng)             */
 /* ======================================================================== */
 .periodic-grid {
+    /* 4 cột bằng nhau, 29 hàng nhỏ (mỗi hàng 30px) để kiểm soát vị trí */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50px repeat(5, 100px);
-    gap: 5px;
+    grid-template-rows: repeat(29, 30px);
+    gap: 15px 15px; /* Khoảng cách giữa các ô */
     flex-grow: 1;
+    min-height: 900px;
 }
 
-/* Định dạng Tên Hormone (Dòng 0) */
-.hormone-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: black;
-    font-size: 1.1em;
-    background-color: #ddd;
-    border-radius: 5px 5px 0 0;
-    border-bottom: 3px solid;
-}
-
-/* Màu sắc cho Hormone Label (Nền nhạt) */
-.hormone-label.dopamine { border-bottom-color: #FFD700; background-color: #FFFACD; }
-.hormone-label.oxytocin { border-bottom-color: #FF69B4; background-color: #FFB6C1; }
-.hormone-label.serotonin { border-bottom-color: #3CB371; background-color: #98FB98; }
-.hormone-label.endorphins { border-bottom-color: #8A2BE2; background-color: #E6E6FA; }
-
-/* Định dạng Ô Element */
+/* Định vị tuyệt đối các ô dựa trên thuộc tính data */
 .element {
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: grid;
-    grid-template-areas:
-        "name name"
-        "symbol level"
-        "type ."
-    ;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
-    font-size: 0.8em;
+    /* Đảm bảo ô luôn là Grid */
+    display: grid; 
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto auto;
+    
+    border: 3px solid #ccc; /* Khung viền mỏng như thiết kế */
+    padding: 10px;
+    box-sizing: border-box;
     cursor: pointer;
     transition: transform 0.2s;
-    height: 100%;
-    box-sizing: border-box;
+    position: relative;
+    border-radius: 0; /* Loại bỏ bo góc */
+    font-size: 0.8em;
+    font-weight: 500;
+    
+    /* Thiết lập vị trí và độ cao dựa trên HTML data attributes */
+    grid-column: attr(data-col-start);
+    grid-row-start: attr(data-row-start);
+    grid-row-end: span attr(data-row-span);
 }
 
-/* Màu nền cho Ô Element (Nền đậm) */
-.element.dopamine { background-color: #FFD700; }
-.element.oxytocin { background-color: #FF69B4; }
-.element.serotonin { background-color: #3CB371; }
-.element.endorphins { background-color: #8A2BE2; }
+/* Sử dụng thuộc tính data để đặt vị trí trong CSS */
+.element[data-row-start] {
+    grid-row-start: var(--data-row-start);
+}
+.element[data-col-start] {
+    grid-column-start: var(--data-col-start);
+}
+.element[data-row-span] {
+    grid-row-end: span var(--data-row-span);
+}
+/* Fallback/Binding cho các thuộc tính data */
+.element {
+    --data-row-start: attr(data-row-start);
+    --data-col-start: attr(data-col-start);
+    --data-row-span: attr(data-row-span);
+}
 
 /* Định vị nội dung trong ô */
-.element .name { grid-area: name; font-weight: bold; text-align: center; font-size: 1em; margin-bottom: 5px; }
-.element .symbol { grid-area: symbol; font-size: 1.5em; font-weight: bold; }
-.element .level { grid-area: level; font-size: 1.2em; font-weight: bold; text-align: right; }
-.element .type { grid-area: type; font-weight: 600; align-self: flex-end; }
-
-/* Hiệu ứng tương tác */
-.element:hover {
-    transform: scale(1.05);
-    z-index: 10;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.element .name { 
+    grid-row: 1; 
+    grid-column: 1 / 3; 
+    font-weight: 700; 
+    text-align: left; 
+    align-self: flex-start;
+    font-size: 0.9em;
+}
+.element .impact-level { 
+    grid-row: 2; 
+    grid-column: 1; 
+    font-weight: 800; 
+    font-size: 1.5em;
+    align-self: flex-end;
+}
+.element .functional { 
+    grid-row: 2; 
+    grid-column: 2; 
+    font-weight: 700; 
+    font-size: 1.2em; 
+    text-align: right;
+    align-self: flex-end;
+}
+.element .type { 
+    grid-row: 3; 
+    grid-column: 2; 
+    font-weight: 700; 
+    font-size: 1.2em;
+    text-align: right;
+    align-self: flex-end;
 }
 
+/* Màu sắc cho Ô Element */
+.element.dopamine { border-color: #FFD700; background-color: transparent; }
+.element.oxytocin { border-color: #FF69B4; background-color: transparent; }
+.element.serotonin { border-color: #3CB371; background-color: transparent; }
+.element.endorphins { border-color: #8A2BE2; background-color: transparent; }
+
 /* ======================================================================== */
-/* CSS MODAL (POP-UP)                       */
+/* 4. CHÚ GIẢI CHÍNH (LEGEND) */
+/* ======================================================================== */
+.legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.type-legend {
+    margin-bottom: 40px;
+}
+
+.hormone-legend div {
+    margin: 0 40px;
+    padding: 10px 15px;
+    border: 3px solid;
+    font-size: 1.1em;
+    text-align: center;
+    width: 150px;
+}
+
+.hormone-legend .dopamine { border-color: #FFD700; }
+.hormone-legend .oxytocin { border-color: #FF69B4; }
+.hormone-legend .serotonin { border-color: #3CB371; }
+.hormone-legend .endorphins { border-color: #8A2BE2; }
+
+/* ======================================================================== */
+/* 5. CHÚ GIẢI KEY (HEADER) */
+/* ======================================================================== */
+.legend-key-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.legend-key {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}
+.key-box {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #000;
+}
+
+.key-name { grid-column: 1; grid-row: 1; align-self: flex-end; }
+.key-type { grid-column: 2; grid-row: 1; align-self: flex-end; }
+.key-impact { grid-column: 1; grid-row: 2; align-self: flex-end; }
+.key-functional { grid-column: 1; grid-row: 3; align-self: flex-end; }
+.key-image { grid-column: 2; grid-row: 2 / 4; border: 1px solid #000; }
+
+.example-box {
+    border: 3px solid #ccc;
+    padding: 10px;
+    width: 150px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto auto;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+.example-box .name { grid-column: 1 / 3; grid-row: 1; align-self: flex-start; }
+.example-box .impact { grid-row: 2; grid-column: 1; font-size: 1.5em; align-self: flex-end; }
+.example-box .functional { grid-row: 2; grid-column: 2; font-size: 1.2em; align-self: flex-end; }
+.example-box .type { grid-row: 3; grid-column: 2; font-size: 1.2em; align-self: flex-end; }
+
+
+/* ======================================================================== */
+/* 6. CSS MODAL (POP-UP) - Giữ nguyên logic cũ */
 /* ======================================================================== */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 20;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-    padding-top: 50px;
+    display: none; position: fixed; z-index: 20; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); padding-top: 50px;
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+    background-color: #fff; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); animation-name: animatetop; animation-duration: 0.4s;
 }
 
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {top: -300px; opacity: 0} to {top: 0; opacity: 1}
 }
 
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: #aaa; float: right; font-size: 28px; font-weight: bold;
 }
 
 .close-button:hover, .close-button:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+    color: #000; text-decoration: none; cursor: pointer;
 }
 
 #modal-title { font-size: 1.8em; color: #333; margin-bottom: 5px; }

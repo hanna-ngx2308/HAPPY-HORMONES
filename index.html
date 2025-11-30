@@ -3,169 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng Tuần Hoàn các Hormone Hạnh Phúc</title>
+    <title>Periodic Table of Happy Hormones</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <header>
         <h1>Periodic Table of Happy Hormones</h1>
+        <div class="legend-key-container">
+            <div class="legend-key">
+                <div class="key-box">
+                    <div class="key-name">THE NAME OF ELEMENT</div>
+                    <div class="key-impact">IMPACT LEVEL</div>
+                    <div class="key-functional">THE FUNCTIONAL ELEMENT</div>
+                    <div class="key-type">THE TYPE OF HORMONE</div>
+                    <div class="key-image">THE IMAGE OF ELEMENT</div>
+                </div>
+                <div class="key-example">
+                    <div class="example-box">
+                        <div class="name">AVACODO</div>
+                        <div class="impact">3</div>
+                        <div class="functional">S</div>
+                        <div class="type">F</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="table-container">
 
         <div class="impact-levels">
             <div class="level-label">IMPACT LEVEL</div>
-            <div class="level-number">5</div>
-            <div class="level-number">4</div>
-            <div class="level-number">3</div>
-            <div class="level-number">2</div>
-            <div class="level-number">1</div>
+            <div class="level-number level-5">5</div>
+            <div class="level-number level-4">4</div>
+            <div class="level-number level-3">3</div>
+            <div class="level-number level-2">2</div>
+            <div class="level-number level-1">1</div>
         </div>
 
         <div class="periodic-grid">
 
-            <div class="hormone-label dopamine">DOPAMINE</div>
-            <div class="hormone-label oxytocin">OXYTOCIN</div>
-            <div class="hormone-label serotonin">SEROTONIN</div>
-            <div class="hormone-label endorphins">ENDORPHINS</div>
-
-            <div class="element dopamine level-5">
-                <div class="name">SET THE GOAL AND GET IT</div>
-                <div class="symbol">GO</div>
-                <div class="level">5</div>
-                <div class="type">H/M</div>
+            <div class="element dopamine level-5" data-name="SET THE GOAL AND DO IT" data-row-start="1" data-col-start="1" data-row-span="4">
+                <div class="name">SET THE GOAL AND DO IT</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">M/P</div>
             </div>
-            <div class="element oxytocin level-5">
-                <div class="name">HUG SOMEONE</div>
-                <div class="symbol">HG</div>
-                <div class="level">5</div>
-                <div class="type">M</div>
+            <div class="element dopamine level-4" data-name="SLEEP" data-row-start="6" data-col-start="1" data-row-span="3">
+                <div class="name">SLEEP</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">M</div>
             </div>
-            <div class="element serotonin level-5">
-                <div class="name">MEDITATION</div>
-                <div class="symbol">MD</div>
-                <div class="level">5</div>
-                <div class="type">M</div>
+            <div class="element dopamine level-3" data-name="APPLE" data-row-start="11" data-col-start="1" data-row-span="3">
+                <div class="name">APPLE</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element endorphins level-5">
-                <div class="name">SPICY FOODS</div>
-                <div class="symbol">SF</div>
-                <div class="level">5</div>
-                <div class="type">N</div>
+            <div class="element dopamine level-3" data-name="STRAWBERRY" data-row-start="14" data-col-start="1" data-row-span="3">
+                <div class="name">STRAWBERRY</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element dopamine level-2" data-name="BANANA" data-row-start="18" data-col-start="1" data-row-span="3">
+                <div class="name">BANANA</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element dopamine level-2" data-name="AVOCADO (Dop)">
+                <div class="name">AVOCADO</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
             </div>
 
-            <div class="element dopamine level-4">
-                <div class="name">SLEEP</div>
-                <div class="symbol">SL</div>
-                <div class="level">4</div>
-                <div class="type">M</div>
+            <div class="element oxytocin level-5" data-name="HUG SOMEONE" data-row-start="1" data-col-start="2" data-row-span="2">
+                <div class="name">HUG SOMEONE</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">M/P</div>
             </div>
-            <div class="element oxytocin level-4">
-                <div class="name">MILK</div>
-                <div class="symbol">ML</div>
-                <div class="level">4</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-5" data-name="MEET FRIENDS" data-row-start="3" data-col-start="2" data-row-span="2">
+                <div class="name">MEET FRIENDS</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">M/P</div>
             </div>
-            <div class="element serotonin level-4">
-                <div class="name">EGG</div>
-                <div class="symbol">EG</div>
-                <div class="level">4</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-4" data-name="LISTEN TO MUSIC" data-row-start="6" data-col-start="2" data-row-span="3">
+                <div class="name">LISTEN TO MUSIC</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">M</div>
             </div>
-            <div class="element endorphins level-4">
-                <div class="name">DARK CHOCOLATE</div>
-                <div class="symbol">DC</div>
-                <div class="level">4</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-4" data-name="MILK" data-row-start="9" data-col-start="2" data-row-span="2">
+                <div class="name">MILK</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">F</div>
             </div>
-
-            <div class="element dopamine level-3">
-                <div class="name">APPLE</div>
-                <div class="symbol">AP</div>
-                <div class="level">3</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-3" data-name="APPLE (Oxy)" data-row-start="11" data-col-start="2" data-row-span="3">
+                <div class="name">APPLE</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element oxytocin level-3">
-                <div class="name">CAULIFLOWER</div>
-                <div class="symbol">CF</div>
-                <div class="level">3</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-3" data-name="AVOCADO (Oxy)" data-row-start="14" data-col-start="2" data-row-span="3">
+                <div class="name">AVOCADO</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element serotonin level-3">
-                <div class="name">GREEN VEGETABLES</div>
-                <div class="symbol">GV</div>
-                <div class="level">3</div>
-                <div class="type">N</div>
+            <div class="element oxytocin level-2" data-name="BEANS" data-row-start="17" data-col-start="2" data-row-span="3">
+                <div class="name">BEANS</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element endorphins level-3">
-                <div class="name">STRETCHING</div>
-                <div class="symbol">ST</div>
-                <div class="level">3</div>
-                <div class="type">H</div>
+            <div class="element oxytocin level-2" data-name="TOMATO (Oxy)" data-row-start="20" data-col-start="2" data-row-span="3">
+                <div class="name">TOMATO</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
             </div>
 
-            <div class="element dopamine level-2">
-                <div class="name">STRAWBERRY</div>
-                <div class="symbol">SB</div>
-                <div class="level">2</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-5" data-name="MEDITATION" data-row-start="1" data-col-start="3" data-row-span="2">
+                <div class="name">MEDITATION</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">M/P</div>
             </div>
-            <div class="element oxytocin level-2">
-                <div class="name">BEANS</div>
-                <div class="symbol">BN</div>
-                <div class="level">2</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-5" data-name="SUNBATHING" data-row-start="3" data-col-start="3" data-row-span="2">
+                <div class="name">SUNBATHING</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">M/P</div>
             </div>
-            <div class="element serotonin level-2">
-                <div class="name">NUTS</div>
-                <div class="symbol">NT</div>
-                <div class="level">2</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-4" data-name="EGG" data-row-start="6" data-col-start="3" data-row-span="3">
+                <div class="name">EGG</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element endorphins level-2">
-                <div class="name">ENTERTAINMENT</div>
-                <div class="symbol">ET</div>
-                <div class="level">2</div>
-                <div class="type">M</div>
+            <div class="element serotonin level-4" data-name="GREEN TEA (Sero)" data-row-start="9" data-col-start="3" data-row-span="2">
+                <div class="name">GREEN TEA</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">F</div>
             </div>
-
-            <div class="element dopamine level-1">
-                <div class="name">BANANA</div>
-                <div class="symbol">BA</div>
-                <div class="level">1</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-3" data-name="VITAMINC" data-row-start="11" data-col-start="3" data-row-span="3">
+                <div class="name">VITAMINC</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element oxytocin level-1">
-                <div class="name">CHIA SEEDS</div>
-                <div class="symbol">CS</div>
-                <div class="level">1</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-3" data-name="CAULIFLOWER" data-row-start="14" data-col-start="3" data-row-span="3">
+                <div class="name">CAULIFLOWER</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element serotonin level-1">
-                <div class="name">CHEESE</div>
-                <div class="symbol">CH</div>
-                <div class="level">1</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-2" data-name="CHIA SEEDS" data-row-start="17" data-col-start="3" data-row-span="3">
+                <div class="name">CHIA SEEDS</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
             </div>
-            <div class="element endorphins level-1">
-                <div class="name">CREAM</div>
-                <div class="symbol">CR</div>
-                <div class="level">1</div>
-                <div class="type">N</div>
+            <div class="element serotonin level-2" data-name="TOMATO (Sero)" data-row-start="20" data-col-start="3" data-row-span="3">
+                <div class="name">TOMATO</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
             </div>
 
+            <div class="element endorphins level-5" data-name="EXERCISE" data-row-start="1" data-col-start="4" data-row-span="4">
+                <div class="name">EXERCISE</div><div class="impact-level">5</div><div class="functional">S</div><div class="type">P</div>
+            </div>
+            <div class="element endorphins level-4" data-name="SPICY FOODS" data-row-start="5" data-col-start="4" data-row-span="2">
+                <div class="name">SPICY FOODS</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element endorphins level-4" data-name="TAKE A COLD SHOWER" data-row-start="7" data-col-start="4" data-row-span="2">
+                <div class="name">TAKE A COLD SHOWER</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">H</div>
+            </div>
+            <div class="element endorphins level-4" data-name="DARK CHOCOLATE" data-row-start="9" data-col-start="4" data-row-span="2">
+                <div class="name">DARK CHOCOLATE</div><div class="impact-level">4</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element endorphins level-3" data-name="STRETCHING" data-row-start="11" data-col-start="4" data-row-span="2">
+                <div class="name">STRETCHING</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">M</div>
+            </div>
+            <div class="element endorphins level-3" data-name="CREAM" data-row-start="13" data-col-start="4" data-row-span="2">
+                <div class="name">CREAM</div><div class="impact-level">3</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element endorphins level-2" data-name="PACKETS" data-row-start="17" data-col-start="4" data-row-span="3">
+                <div class="name">PACKETS</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">F</div>
+            </div>
+            <div class="element endorphins level-2" data-name="ENTERTAINMENT" data-row-start="20" data-col-start="4" data-row-span="3">
+                <div class="name">ENTERTAINMENT</div><div class="impact-level">2</div><div class="functional">S</div><div class="type">M</div>
+            </div>
+            
         </div>
     </div>
 
-    <div class="legend" style="margin-top: 20px;">
-        <strong>H</strong>: PHYSICAL HABIT |
+    <div class="legend type-legend">
+        <strong>P</strong>: PHYSICAL HABIT |
         <strong>M</strong>: MENTAL HABIT |
-        <strong>N</strong>: FOOD
+        <strong>F</strong>: FOOD
+    </div>
+    
+    <div class="legend hormone-legend">
+        <div class="dopamine">DOPAMIN</div>
+        <div class="oxytocin">OXYTOCIN</div>
+        <div class="serotonin">SEROTONIN</div>
+        <div class="endorphins">ENDORPHINS</div>
     </div>
 
     <div id="elementModal" class="modal">
@@ -173,11 +164,11 @@
             <span class="close-button">&times;</span>
             <h2 id="modal-title"></h2>
             <p id="modal-hormone-type"></p>
-            <div id="modal-details">
-                </div>
+            <div id="modal-details"></div>
             <p class="impact-level-info">Mức độ ảnh hưởng: <span id="modal-impact-level"></span></p>
         </div>
     </div>
 
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script>
+</body>
 </html>

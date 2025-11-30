@@ -1,13 +1,13 @@
 /* ======================================================================== */
-/* 1. CSS CHUNG VÀ FONT INTER - DARK MODE                                */
+/* 1. CSS CHUNG VÀ FONT INTER                                */
 /* ======================================================================== */
 body {
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #000; /* Nền ĐEN */
-    color: #fff; /* Chữ TRẮNG */
+    background-color: #fff;
+    /* Nền trắng như thiết kế */
     padding: 30px 20px;
 }
 
@@ -48,15 +48,29 @@ h1 {
     position: absolute;
     right: 0;
     font-size: 1.5em;
-    color: #fff; /* Chữ TRẮNG */
+    color: #000;
 }
 
 /* Định vị tuyệt đối các số level để căn với các ô */
-.level-5 { top: 50px; } 
-.level-4 { top: 250px; }
-.level-3 { top: 460px; }
-.level-2 { top: 670px; }
-.level-1 { top: 880px; }
+.level-5 {
+    top: 50px;
+}
+
+.level-4 {
+    top: 250px;
+}
+
+.level-3 {
+    top: 460px;
+}
+
+.level-2 {
+    top: 670px;
+}
+
+.level-1 {
+    top: 880px;
+}
 
 
 /* ======================================================================== */
@@ -67,7 +81,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(29, 30px);
-    gap: 15px 15px; /* Khoảng cách giữa các ô */
+    gap: 15px 15px;
+    /* Khoảng cách giữa các ô */
     flex-grow: 1;
     min-height: 900px;
 }
@@ -75,21 +90,22 @@ h1 {
 /* Định vị tuyệt đối các ô dựa trên thuộc tính data */
 .element {
     /* Đảm bảo ô luôn là Grid */
-    display: grid; 
+    display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto auto;
-    
-    border: 3px solid #ccc; 
+
+    border: 4px solid #ccc;
+    /* Khung viền mỏng như thiết kế */
     padding: 10px;
     box-sizing: border-box;
     cursor: pointer;
     transition: transform 0.2s;
     position: relative;
-    border-radius: 0; 
+    border-radius: 0;
+    /* Loại bỏ bo góc */
     font-size: 0.8em;
     font-weight: 500;
-    background-color: transparent; /* Nền trong suốt */
-    
+
     /* Thiết lập vị trí và độ cao dựa trên HTML data attributes */
     grid-column: attr(data-col-start);
     grid-row-start: attr(data-row-start);
@@ -100,12 +116,15 @@ h1 {
 .element[data-row-start] {
     grid-row-start: var(--data-row-start);
 }
+
 .element[data-col-start] {
     grid-column-start: var(--data-col-start);
 }
+
 .element[data-row-span] {
     grid-row-end: span var(--data-row-span);
 }
+
 /* Fallback/Binding cho các thuộc tính data */
 .element {
     --data-row-start: attr(data-row-start);
@@ -114,43 +133,61 @@ h1 {
 }
 
 /* Định vị nội dung trong ô */
-.element .name { 
-    grid-row: 1; 
-    grid-column: 1 / 3; 
-    font-weight: 700; 
-    text-align: left; 
+.element .name {
+    grid-row: 1;
+    grid-column: 1 / 3;
+    font-weight: 700;
+    text-align: left;
     align-self: flex-start;
     font-size: 0.9em;
 }
-.element .impact-level { 
-    grid-row: 2; 
-    grid-column: 1; 
-    font-weight: 800; 
+
+.element .impact-level {
+    grid-row: 2;
+    grid-column: 1;
+    font-weight: 800;
     font-size: 1.5em;
     align-self: flex-end;
 }
-.element .functional { 
-    grid-row: 2; 
-    grid-column: 2; 
-    font-weight: 700; 
-    font-size: 1.2em; 
+
+.element .functional {
+    grid-row: 2;
+    grid-column: 2;
+    font-weight: 700;
+    font-size: 1.2em;
     text-align: right;
     align-self: flex-end;
 }
-.element .type { 
-    grid-row: 3; 
-    grid-column: 2; 
-    font-weight: 700; 
+
+.element .type {
+    grid-row: 3;
+    grid-column: 2;
+    font-weight: 700;
     font-size: 1.2em;
     text-align: right;
     align-self: flex-end;
 }
 
 /* Màu sắc cho Ô Element */
-.element.dopamine { border-color: #FFD700; }
-.element.oxytocin { border-color: #FF69B4; }
-.element.serotonin { border-color: #3CB371; }
-.element.endorphins { border-color: #8A2BE2; }
+.element.dopamine {
+    border-color: #FFDE76;
+    background-color: transparent;
+}
+
+.element.oxytocin {
+    border-color: #FF8688;
+    background-color: transparent;
+}
+
+.element.serotonin {
+    border-color: #5ECF98;
+    background-color: transparent;
+}
+
+.element.endorphins {
+    border-color: #C497F7;
+    background-color: transparent;
+}
 
 /* ======================================================================== */
 /* 4. CHÚ GIẢI CHÍNH (LEGEND) */
@@ -169,17 +206,48 @@ h1 {
 .hormone-legend div {
     margin: 0 40px;
     padding: 10px 15px;
-    border: 3px solid;
+    border: 4px solid;
     font-size: 1.1em;
     text-align: center;
     width: 150px;
-    background-color: transparent;
 }
 
-.hormone-legend .dopamine { border-color: #FFD700; }
-.hormone-legend .oxytocin { border-color: #FF69B4; }
-.hormone-legend .serotonin { border-color: #3CB371; }
-.hormone-legend .endorphins { border-color: #8A2BE2; }
+.hormone-legend .dopamine {
+    border-color: #FFDE76;
+}
+
+.hormone-legend .oxytocin {
+    border-color: #FF8688;
+}
+
+.hormone-legend .serotonin {
+    border-color: #5ECF98;
+}
+
+.hormone-legend .endorphins {
+    border-color: #C497F7;
+}
+
+/* Filter functionality styles */
+.hormone-legend div {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hormone-legend div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hormone-legend div.active {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+}
+
+.element.hidden {
+    display: none;
+}
 
 /* ======================================================================== */
 /* 5. CHÚ GIẢI KEY (HEADER) */
@@ -196,6 +264,7 @@ h1 {
     align-items: flex-end;
     gap: 30px;
 }
+
 .key-box {
     display: grid;
     grid-template-columns: 150px 150px;
@@ -205,17 +274,41 @@ h1 {
     font-weight: 600;
     text-align: center;
     position: relative;
-    border-bottom: 1px solid #fff; /* Chữ trắng */
+    border-bottom: 1px solid #000;
 }
 
-.key-name { grid-column: 1; grid-row: 1; align-self: flex-end; }
-.key-type { grid-column: 2; grid-row: 1; align-self: flex-end; }
-.key-impact { grid-column: 1; grid-row: 2; align-self: flex-end; }
-.key-functional { grid-column: 1; grid-row: 3; align-self: flex-end; }
-.key-image { grid-column: 2; grid-row: 2 / 4; border: 1px solid #fff; /* Đường viền trắng */ }
+.key-name {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: flex-end;
+}
+
+.key-type {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: flex-end;
+}
+
+.key-impact {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: flex-end;
+}
+
+.key-functional {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: flex-end;
+}
+
+.key-image {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    border: 1px solid #000;
+}
 
 .example-box {
-    border: 3px solid #FFD700; 
+    border: 4px solid #ccc;
     padding: 10px;
     width: 150px;
     height: 100px;
@@ -226,44 +319,132 @@ h1 {
     font-weight: 700;
     box-sizing: border-box;
 }
-.example-box .name { grid-column: 1 / 3; grid-row: 1; align-self: flex-start; }
-.example-box .impact { grid-row: 2; grid-column: 1; font-size: 1.5em; align-self: flex-end; }
-.example-box .functional { grid-row: 2; grid-column: 2; font-size: 1.2em; align-self: flex-end; }
-.example-box .type { grid-row: 3; grid-column: 2; font-size: 1.2em; align-self: flex-end; }
+
+.example-box .name {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    align-self: flex-start;
+}
+
+.example-box .impact {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 1.5em;
+    align-self: flex-end;
+}
+
+.example-box .functional {
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 1.2em;
+    align-self: flex-end;
+}
+
+.example-box .type {
+    grid-row: 3;
+    grid-column: 2;
+    font-size: 1.2em;
+    align-self: flex-end;
+}
 
 
 /* ======================================================================== */
-/* 6. CSS MODAL (POP-UP) */
+/* 6. CSS MODAL (POP-UP) - Giữ nguyên logic cũ */
 /* ======================================================================== */
 .modal {
-    display: none; position: fixed; z-index: 20; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); padding-top: 50px;
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 50px;
 }
 
 .modal-content {
-    background-color: #111; /* Nền Modal màu xám tối */
-    color: #fff; /* Chữ Modal màu trắng */
-    margin: 5% auto; padding: 20px; border: 1px solid #555; width: 80%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(255,255,255,0.1), 0 6px 20px 0 rgba(255,255,255,0.05); animation-name: animatetop; animation-duration: 0.4s;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
 }
 
 @keyframes animatetop {
-    from {top: -300px; opacity: 0} to {top: 0; opacity: 1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
 .close-button {
-    color: #ccc; float: right; font-size: 28px; font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.close-button:hover, .close-button:focus {
-    color: #fff; text-decoration: none; cursor: pointer;
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-#modal-title { font-size: 1.8em; color: #fff; margin-bottom: 5px; }
-#modal-hormone-type { font-size: 1.1em; font-weight: bold; color: #ccc; border-bottom: 2px solid; padding-bottom: 5px; margin-bottom: 15px; }
-.impact-level-info { margin-top: 15px; font-size: 1em; }
-#modal-impact-level { font-size: 1.2em; font-weight: bold; }
+#modal-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 5px;
+}
 
-/* Màu sắc cho nội dung Modal (giữ nguyên màu hormone) */
-.modal-hormone-dopamine { color: #FFD700 !important; border-bottom-color: #FFD700 !important; }
-.modal-hormone-oxytocin { color: #FF69B4 !important; border-bottom-color: #FF69B4 !important; }
-.modal-hormone-serotonin { color: #3CB371 !important; border-bottom-color: #3CB371 !important; }
-.modal-hormone-endorphins { color: #8A2BE2 !important; border-bottom-color: #8A2BE2 !important; }
+#modal-hormone-type {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.impact-level-info {
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+#modal-impact-level {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Màu sắc cho nội dung Modal */
+.modal-hormone-dopamine {
+    color: #FFDE76 !important;
+    border-bottom-color: #FFDE76 !important;
+}
+
+.modal-hormone-oxytocin {
+    color: #FF8688 !important;
+    border-bottom-color: #FF8688 !important;
+}
+
+.modal-hormone-serotonin {
+    color: #5ECF98 !important;
+    border-bottom-color: #5ECF98 !important;
+}
+
+.modal-hormone-endorphins {
+    color: #C497F7 !important;
+    border-bottom-color: #C497F7 !important;
+}

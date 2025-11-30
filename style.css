@@ -99,12 +99,13 @@ h1 {
     padding: 10px;
     box-sizing: border-box;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     border-radius: 0;
     /* Loại bỏ bo góc */
     font-size: 0.8em;
     font-weight: 500;
+    background-color: #fff;
 
     /* Thiết lập vị trí và độ cao dựa trên HTML data attributes */
     grid-column: attr(data-col-start);
@@ -112,24 +113,157 @@ h1 {
     grid-row-end: span attr(data-row-span);
 }
 
-/* Sử dụng thuộc tính data để đặt vị trí trong CSS */
-.element[data-row-start] {
-    grid-row-start: var(--data-row-start);
+/* Sử dụng JavaScript để set grid position từ data attributes */
+.element[data-row-start="1"][data-col-start="1"] {
+    grid-row: 1 / span 4;
+    grid-column: 1;
 }
 
-.element[data-col-start] {
-    grid-column-start: var(--data-col-start);
+.element[data-row-start="6"][data-col-start="1"] {
+    grid-row: 6 / span 3;
+    grid-column: 1;
 }
 
-.element[data-row-span] {
-    grid-row-end: span var(--data-row-span);
+.element[data-row-start="11"][data-col-start="1"] {
+    grid-row: 11 / span 3;
+    grid-column: 1;
 }
 
-/* Fallback/Binding cho các thuộc tính data */
-.element {
-    --data-row-start: attr(data-row-start);
-    --data-col-start: attr(data-col-start);
-    --data-row-span: attr(data-row-span);
+.element[data-row-start="14"][data-col-start="1"] {
+    grid-row: 14 / span 3;
+    grid-column: 1;
+}
+
+.element[data-row-start="18"][data-col-start="1"] {
+    grid-row: 18 / span 3;
+    grid-column: 1;
+}
+
+.element[data-row-start="1"][data-col-start="2"] {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+}
+
+.element[data-row-start="3"][data-col-start="2"] {
+    grid-row: 3 / span 2;
+    grid-column: 2;
+}
+
+.element[data-row-start="6"][data-col-start="2"] {
+    grid-row: 6 / span 3;
+    grid-column: 2;
+}
+
+.element[data-row-start="9"][data-col-start="2"] {
+    grid-row: 9 / span 2;
+    grid-column: 2;
+}
+
+.element[data-row-start="11"][data-col-start="2"] {
+    grid-row: 11 / span 3;
+    grid-column: 2;
+}
+
+.element[data-row-start="14"][data-col-start="2"] {
+    grid-row: 14 / span 3;
+    grid-column: 2;
+}
+
+.element[data-row-start="17"][data-col-start="2"] {
+    grid-row: 17 / span 3;
+    grid-column: 2;
+}
+
+.element[data-row-start="20"][data-col-start="2"] {
+    grid-row: 20 / span 3;
+    grid-column: 2;
+}
+
+.element[data-row-start="1"][data-col-start="3"] {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+}
+
+.element[data-row-start="3"][data-col-start="3"] {
+    grid-row: 3 / span 2;
+    grid-column: 3;
+}
+
+.element[data-row-start="6"][data-col-start="3"] {
+    grid-row: 6 / span 3;
+    grid-column: 3;
+}
+
+.element[data-row-start="9"][data-col-start="3"] {
+    grid-row: 9 / span 2;
+    grid-column: 3;
+}
+
+.element[data-row-start="11"][data-col-start="3"] {
+    grid-row: 11 / span 3;
+    grid-column: 3;
+}
+
+.element[data-row-start="14"][data-col-start="3"] {
+    grid-row: 14 / span 3;
+    grid-column: 3;
+}
+
+.element[data-row-start="17"][data-col-start="3"] {
+    grid-row: 17 / span 3;
+    grid-column: 3;
+}
+
+.element[data-row-start="20"][data-col-start="3"] {
+    grid-row: 20 / span 3;
+    grid-column: 3;
+}
+
+.element[data-row-start="1"][data-col-start="4"] {
+    grid-row: 1 / span 4;
+    grid-column: 4;
+}
+
+.element[data-row-start="5"][data-col-start="4"] {
+    grid-row: 5 / span 2;
+    grid-column: 4;
+}
+
+.element[data-row-start="7"][data-col-start="4"] {
+    grid-row: 7 / span 2;
+    grid-column: 4;
+}
+
+.element[data-row-start="9"][data-col-start="4"] {
+    grid-row: 9 / span 2;
+    grid-column: 4;
+}
+
+.element[data-row-start="11"][data-col-start="4"] {
+    grid-row: 11 / span 2;
+    grid-column: 4;
+}
+
+.element[data-row-start="13"][data-col-start="4"] {
+    grid-row: 13 / span 2;
+    grid-column: 4;
+}
+
+.element[data-row-start="17"][data-col-start="4"] {
+    grid-row: 17 / span 3;
+    grid-column: 4;
+}
+
+.element[data-row-start="20"][data-col-start="4"] {
+    grid-row: 20 / span 3;
+    grid-column: 4;
+}
+
+/* Hover effects */
+.element:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
 /* Định vị nội dung trong ô */
@@ -171,22 +305,42 @@ h1 {
 /* Màu sắc cho Ô Element */
 .element.dopamine {
     border-color: #FFDE76;
-    background-color: transparent;
+    background-color: rgba(255, 222, 118, 0.05);
+}
+
+.element.dopamine:hover {
+    background-color: rgba(255, 222, 118, 0.1);
+    border-color: #FFD700;
 }
 
 .element.oxytocin {
     border-color: #FF8688;
-    background-color: transparent;
+    background-color: rgba(255, 134, 136, 0.05);
+}
+
+.element.oxytocin:hover {
+    background-color: rgba(255, 134, 136, 0.1);
+    border-color: #FF6B6B;
 }
 
 .element.serotonin {
     border-color: #5ECF98;
-    background-color: transparent;
+    background-color: rgba(94, 207, 152, 0.05);
+}
+
+.element.serotonin:hover {
+    background-color: rgba(94, 207, 152, 0.1);
+    border-color: #4CAF50;
 }
 
 .element.endorphins {
     border-color: #C497F7;
-    background-color: transparent;
+    background-color: rgba(196, 151, 247, 0.05);
+}
+
+.element.endorphins:hover {
+    background-color: rgba(196, 151, 247, 0.1);
+    border-color: #9C27B0;
 }
 
 /* ======================================================================== */
@@ -367,14 +521,15 @@ h1 {
 .modal-content {
     background-color: #fff;
     margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    padding: 30px 40px;
+    border: 1px solid #e0e0e0;
     width: 80%;
     max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation-name: animatetop;
     animation-duration: 0.4s;
+    position: relative;
 }
 
 @keyframes animatetop {
@@ -392,15 +547,23 @@ h1 {
 .close-button {
     color: #aaa;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .close-button:hover,
 .close-button:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;
+    transform: scale(1.1);
 }
 
 #modal-title {
@@ -447,4 +610,39 @@ h1 {
 .modal-hormone-endorphins {
     color: #C497F7 !important;
     border-bottom-color: #C497F7 !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .periodic-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .impact-levels {
+        width: 60px;
+        font-size: 0.8em;
+    }
+    
+    .element .name {
+        font-size: 0.75em;
+    }
+    
+    .hormone-legend div {
+        margin: 0 10px;
+        padding: 8px 12px;
+        font-size: 0.9em;
+        width: auto;
+        min-width: 100px;
+    }
+    
+    .legend-key {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
 }

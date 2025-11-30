@@ -1,72 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualization Data - Impact Level</title>
+    <title>Periodic Table of Happy Hormones</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="slide-title">Slide 16:9 - 1</h1>
+
+    <h1 class="main-title">Periodic Table of Happy Hormones</h1>
+
+    <div class="table-container">
+        <div class="key-box">
+            <p>THE NAME OF ELEMENT</p>
+            <p>IMPACT LEVEL</p>
+            <p>THE FUNCTIONAL ELEMENT</p>
+            <div class="image-box">
+                <div class="inner-circle"></div>
+            </div>
+            <p class="key-function">FUNCTION</p>
+            <p class="key-type">THE TYPE OF HORMONE</p>
+            <p class="key-image">THE IMAGE OF ELEMENT</p>
+        </div>
         
-        <div class="visualization-container">
-            <!-- Impact Level Axis -->
-            <div class="axis-container">
-                <div class="axis-label">IMPACT<br>LEVEL</div>
-                <div class="axis-numbers">
-                    <div class="axis-number">5</div>
-                    <div class="axis-number">4</div>
-                    <div class="axis-number">3</div>
-                    <div class="axis-number">2</div>
-                    <div class="axis-number">1</div>
-                </div>
-            </div>
-
-            <!-- Habit Boxes Grid -->
-            <div class="habits-grid">
-                <!-- Column 1 -->
-                <div class="habit-column">
-                    <div class="habit-box impact-5" data-habit="SET THE GOAL">SET THE GOAL</div>
-                    <div class="habit-box impact-3" data-habit="M/P">M/P</div>
-                    <div class="habit-box impact-2" data-habit="SLEEP">SLEEP</div>
-                    <div class="habit-box impact-1" data-habit="APPLE">APPLE</div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="habit-column">
-                    <div class="habit-box impact-4" data-habit="SPICY FOODS">SPICY FOODS</div>
-                    <div class="habit-box impact-3" data-habit="STRETCHING">STRETCHING</div>
-                    <div class="habit-box impact-2" data-habit="CREAM">CREAM</div>
-                </div>
-            </div>
+        <div class="y-axis-label">IMPACT LEVEL</div>
+        <div class="y-axis-numbers">
+            <div>6</div>
+            <div>5</div>
+            <div>4</div>
+            <div>3</div>
+            <div>2</div>
+            <div>1</div>
         </div>
 
-        <!-- Neurotransmitter Boxes -->
-        <div class="neurotransmitters">
-            <div class="neuro-box dopamin" data-neuro="DOPAMIN">
-                <div class="neuro-label">DOPAMIN</div>
+        <div class="hormone-grid">
+            
+            <div class="element dopamin span-row-2" style="grid-column: 1 / span 2; grid-row: 1 / span 2;">
+                <p class="name">SET THE GOAL AND DO IT</p>
+                <div class="details"><span>6</span><span>M/P</span></div>
             </div>
-            <div class="neuro-box oxytocin" data-neuro="OXCYTOCIN">
-                <div class="neuro-label">OXCYTOCIN</div>
+
+            <div class="element oxytocin" style="grid-column: 3; grid-row: 2;">
+                <p class="name">HUG SOMEONE</p>
+                <div class="details"><span>5</span><span>P/M</span></div>
             </div>
-            <div class="neuro-box serotonin" data-neuro="SEROTONIN">
-                <div class="neuro-label">SEROTONIN</div>
+            <div class="element oxytocin" style="grid-column: 4; grid-row: 2;">
+                <p class="name">MEET FRIENDS</p>
+                <div class="details"><span>5</span><span>M</span></div>
             </div>
-            <div class="neuro-box endorphins" data-neuro="ENDORPHINS">
-                <div class="neuro-label">ENDORPHINS</div>
+            <div class="element serotonin" style="grid-column: 5; grid-row: 2;">
+                <p class="name">MEDITATION</p>
+                <div class="details"><span>5</span><span>M</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 6; grid-row: 2;">
+                <p class="name">SUNBATHING</p>
+                <div class="details"><span>5</span><span>P/M</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 7; grid-row: 2;">
+                <p class="name">EXERCISE</p>
+                <div class="details"><span>5</span><span>P</span></div>
+            </div>
+            
+            <div class="element endorphins" style="grid-column: 11; grid-row: 2;">
+                <p class="name">SPICY FOODS</p>
+                <div class="details"><span>5</span><span>F</span></div>
+            </div>
+
+            <div class="element dopamin" style="grid-column: 1; grid-row: 3;">
+                <p class="name">SLEEP</p>
+                <div class="details"><span>4</span><span>M</span></div>
+            </div>
+            <div class="element dopamin" style="grid-column: 2; grid-row: 3;">
+                <p class="name">BANANA</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element oxytocin" style="grid-column: 3; grid-row: 3;">
+                <p class="name">LISTEN TO MUSIC</p>
+                <div class="details"><span>4</span><span>M</span></div>
+            </div>
+            <div class="element oxytocin" style="grid-column: 4; grid-row: 3;">
+                <p class="name">MILK</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 5; grid-row: 3;">
+                <p class="name">EGG</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 6; grid-row: 3;">
+                <p class="name">GREEN TEA</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 7; grid-row: 3;">
+                <p class="name">SALMON</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 8; grid-row: 3;">
+                <p class="name">SEEDS</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 9; grid-row: 3;">
+                <p class="name">CAULIFLOWER</p>
+                <div class="details"><span>4</span><span>F</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 10; grid-row: 3;">
+                <p class="name">TAKE A COLD SHOWER</p>
+                <div class="details"><span>4</span><span>P</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 11; grid-row: 3;">
+                <p class="name">STRETCHING</p>
+                <div class="details"><span>4</span><span>M</span></div>
+            </div>
+
+            <div class="element dopamin" style="grid-column: 1; grid-row: 4;">
+                <p class="name">APPLE</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element dopamin" style="grid-column: 2; grid-row: 4;">
+                <p class="name">STRAWBERRY</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element oxytocin" style="grid-column: 3; grid-row: 4;">
+                <p class="name">GREEN VEGETABLES</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element oxytocin" style="grid-column: 4; grid-row: 4;">
+                <p class="name">APPLE</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 5; grid-row: 4;">
+                <p class="name">AVOCADO</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 6; grid-row: 4;">
+                <p class="name">GREEN TEA</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 7; grid-row: 4;">
+                <p class="name">VITAMIN C</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 8; grid-row: 4;">
+                <p class="name">CAULIFLOWER</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 9; grid-row: 4;">
+                <p class="name">GREEN VEGETABLES</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 10; grid-row: 4;">
+                <p class="name">DARK CHOCOLATE</p>
+                <div class="details"><span>3</span><span>F</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 11; grid-row: 4;">
+                <p class="name">STRETCHING</p>
+                <div class="details"><span>3</span><span>M</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 12; grid-row: 4;">
+                <p class="name">ENTERTAINMENT</p>
+                <div class="details"><span>3</span><span>M</span></div>
+            </div>
+            
+            <div class="element dopamin" style="grid-column: 3; grid-row: 5;">
+                <p class="name">BEANS</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element dopamin" style="grid-column: 4; grid-row: 5;">
+                <p class="name">TOMATO</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 5; grid-row: 5;">
+                <p class="name">CHIA SEEDS</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 6; grid-row: 5;">
+                <p class="name">TOMATO</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 7; grid-row: 5;">
+                <p class="name">TOFU</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 8; grid-row: 5;">
+                <p class="name">AVOCADO</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element serotonin" style="grid-column: 9; grid-row: 5;">
+                <p class="name">PEANUTS</p>
+                <div class="details"><span>2</span><span>F</span></div>
+            </div>
+            <div class="element endorphins" style="grid-column: 12; grid-row: 5;">
+                <p class="name">CREAM</p>
+                <div class="details"><span>2</span><span>F</span></div>
             </div>
         </div>
+        
+    </div>
 
-        <!-- Habit Type Labels -->
-        <div class="habit-labels">
-            <span class="habit-type-label">P PHYSICAL HABIT</span>
-            <span class="habit-type-label">M MENTAL HABIT</span>
-            <span class="habit-type-label">F FOOD</span>
+    <div class="legend-x">
+        <div class="x-labels">
+            <p>P **PHYSICAL HABIT**</p>
+            <p>M **MENTAL HABIT**</p>
+            <p>F **FOOD**</p>
+        </div>
+
+        <div class="hormone-legend">
+            <div class="hormone-item dopamin-color">
+                <p>DOPAMIN</p>
+            </div>
+            <div class="hormone-item oxytocin-color">
+                <p>OXYTOCIN</p>
+            </div>
+            <div class="hormone-item serotonin-color">
+                <p>SEROTONIN</p>
+            </div>
+            <div class="hormone-item endorphins-color">
+                <p>ENDORPHINS</p>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
-
